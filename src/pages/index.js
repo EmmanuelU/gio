@@ -10,6 +10,9 @@ import Nav from "../components/Nav"
 import Links from "../components/Links"
 
 import { Helmet } from "react-helmet"
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 export default class App extends Component {
   constructor() {
@@ -23,8 +26,15 @@ export default class App extends Component {
 
     this.links = [
       {
+        title: 'Interview',
+        link: 'https://youtu.be/kN8qOGJkxJE',
+
+        backcolor: "rgb(255, 174, 213, 0.1)",
+        txtcolor: "white",
+      },
+      {
         title: 'Apple Music',
-        link: '/',
+        link: 'https://music.apple.com/ng/artist/gio-%24/1530337837',
 
         backcolor: "rgb(255, 174, 213, 0.1)",
         txtcolor: "white",
@@ -45,7 +55,14 @@ export default class App extends Component {
       },
       {
         title: 'Youtube',
-        link: '/',
+        link: 'https://www.youtube.com/channel/UCVoHLvfY6mMM-4g_-OPYSzQ',
+
+        backcolor: "rgb(255, 174, 213, 0.1)",
+        txtcolor: "white",
+      },
+      {
+        title: 'WATCH THIS',
+        link: 'https://youtu.be/0pac6ne-0pU',
 
         backcolor: "rgb(255, 174, 213, 0.1)",
         txtcolor: "white",
@@ -69,6 +86,13 @@ export default class App extends Component {
 
     });
 **/
+
+gsap.from("#back", {
+  filter: 'blur(100px)',
+  opacity:0,
+  duration: 2,
+});
+
     this.setState({ bgcolor: "#FFF" })
   }
 
@@ -99,13 +123,13 @@ export default class App extends Component {
         <meta name="theme-color" content="#ffffff" />
         <title>Home | GIO</title>
       </Helmet>
-        <center className={styles.bg}>
+        <center id="back" className={styles.bg}>
 
           <Links Links={this.links} />
 
-            <div className={styles.footer}>
-              GIO | ALL RIGHTS RESERVED.
-            </div>
+          <div className={styles.footer}>
+            GIO | ALL RIGHTS RESERVED.
+          </div>
         </center>
       </>
     )

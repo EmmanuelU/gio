@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
@@ -17,6 +18,7 @@
   "dependencies": {
     "gatsby": "^4.15.2",
     "gatsby-plugin-react-helmet": "^5.15.0",
+    "gsap": "^3.10.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
